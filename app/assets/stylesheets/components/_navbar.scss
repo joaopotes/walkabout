@@ -7,6 +7,16 @@
   flex-grow: 0;
 }
 
+.yellow-traveler {
+  background-color: $traveleryellow;
+  width: 55px;
+  height: 55px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 25px;
 }
