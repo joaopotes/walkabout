@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.home-container {
+  background-color: $traveleryellow;
+  margin: auto;
+  text-align: center;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign-button {
+  padding-top: 50px;
+}
