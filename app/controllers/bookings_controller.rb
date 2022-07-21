@@ -9,8 +9,9 @@ before action :set_excursion, only: :create
     #  @excursion = Excursion.find(params[:excursion_id])   Added in before_action
     @booking = Booking.new(booking_params)
     @booking.excursion = @excursion
+    @booking.user = current_user
     if @booking.save
-      redirect_to excursion_bookings_path(@excursion)
+      redirect_to myprofile_path
     else
       render :new
     end
@@ -32,7 +33,7 @@ before action :set_excursion, only: :create
   private
 
   def booking_params
-    params.require(:booking).permite(:start_time, :end_time, :user_id, :excursion_id)
+    params.require(:booking).permite(:start_time, :end_time)
   end
 
   def set_booking
