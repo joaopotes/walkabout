@@ -1,0 +1,55 @@
+.btn-join {
+  color: $travelerblack;
+  border: 1px solid $travelerblack;
+  padding: 8px 24px;
+  margin-right: 8px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-join:hover {
+  color: black;
+  border: 2px solid $travelerblack;
+}
+
+.btn-login {
+  color: $travelerblack;
+  transition: opacity 0.3s ease;
+}
+
+.btn-login:hover {
+  color: black;
+}
+
+.btn-discover {
+  margin: 16px;
+  width: 160px;
+  font-size: 24px;
+  color: $travelerbeige;
+  background: $travelerblack;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-discover:hover {
+  border: 2px solid $travelerblack;
+  color: $travelerbeige;
+  font-weight: bold;
+}
+
+.btn-signin {
+  margin: 16px;
+  width: 160px;
+  font-size: 24px;
+  color: $travelerblack;
+  // border: 1px solid $travelerblack;
+  box-shadow: 2px 2px 2px 2px $travelerblack;
+  border-radius: 16px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-signin:hover {
+  border: 2px solid $travelerblack;
+  color: $travelerblack;
+  font-weight: bold;
+}

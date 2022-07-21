@@ -1,13 +1,23 @@
+.container-fluid{
+  padding: 0px 160px
+}
+
+.navbar-title {
+  h1 {
+    color: $travelerblack;
+  }
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $travelerbeige;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.yellow-traveler {
+.navbar-logo {
   background-color: $traveleryellow;
   width: 55px;
   height: 55px;
