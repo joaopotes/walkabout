@@ -2,7 +2,7 @@
 <ul>
   <% @excursions.each do |excursion| %>
     <li>
-      <strong> <%= excursion.name %> </strong> |<%= excursion.description %>
+      <strong> <%= link_to excursion.name, excursion_path(excursion.id) %> </strong> |<%= excursion.description %>
     </li>
   <% end %>
 </ul>

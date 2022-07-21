@@ -34,6 +34,6 @@ class ExcursionsController < ApplicationController
   end
 
   def setup_excursion
-    @excursion = Excursion.find(:id)
+    @excursion = Excursion.find(params[:id])
   end
 end
