@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy]
 
   #  we want to create profile pages for the users (both normal users and hosts), when the users sign up, the users will,
-  #  be created, so we dont need the method new or the create
-  resources :pages, except: [:new, :create]
+  #  be created, so we dont need the method index, new or the create
+  resources :pages, except: [:index, :new, :create]
 end
