@@ -1,5 +1,5 @@
 class ExcursionsController < ApplicationController
-  before_action :setup_excursion, only: %i[show edit update destroy]
+  before_action :set_excursion, only: %i[show edit update destroy]
   def index
     @excursions = Excursion.all
   end
@@ -13,7 +13,12 @@ class ExcursionsController < ApplicationController
 
   def create
     @excursion = Excursion.new(excursion_params)
-    @excursion.save
+    @excursion.user = current_user
+    if @excursion.save
+      redirect_to myexcursions_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -21,19 +26,21 @@ class ExcursionsController < ApplicationController
 
   def update
     @excursion = Excursion.update(excursion_params)
+    redirect_to myexcursions_path
   end
 
   def destroy
     @excursion.destroy
+    redirect_to myexcursions_path
   end
 
   private
 
   def excursion_params
-    params.require(:excursion).permit(:image, :name, :description, :country, :user_id, :location, :price, :capacity)
+    params.require(:excursion).permit(:image, :name, :description, :country, :location, :price, :capacity)
   end
 
-  def setup_excursion
+  def set_excursion
     @excursion = Excursion.find(params[:id])
   end
 end
