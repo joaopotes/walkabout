@@ -3,11 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :excursions do
-    resources :bookings, only: [:new, :create, :edit, :update]
+    resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:destroy]
-
-  #  we want to create profile pages for the users (both normal users and hosts), when the users sign up, the users will,
-  #  be created, so we dont need the method index, new or the create
-  resources :pages, except: [:index, :new, :create]
+  resources :bookings, only: [:edit, :update, :destroy]
+  get '/myprofile', to: 'pages#profile'
 end
