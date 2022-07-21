@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:edit, :update, :destroy]
   get '/myprofile', to: 'pages#profile'
+  get '/myexcursions', to: 'pages#excursions_profile'
 end

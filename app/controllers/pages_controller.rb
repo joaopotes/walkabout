@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def profile
     @bookings = Booking.where(user: current_user)
   end
+
+  def excursions_profile
+    @excursions = Excursion.where(user: current_user)
+  end
 end
