@@ -1,5 +1,5 @@
 class ExcursionsController < ApplicationController
-  before_action :setup_excursion, only: [:show, :edit, :update, :destroy]
+  before_action :setup_excursion, only: %i[show edit update destroy]
   def index
     @excursions = Excursion.all
   end
