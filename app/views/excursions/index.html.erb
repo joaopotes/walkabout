@@ -1,0 +1,8 @@
+<h1> Excursion index </h1>
+<ul>
+  <% @excursions.each do |excursion| %>
+    <li>
+      <strong> <%= link_to excursion.name, excursion_path(excursion.id) %> </strong> |<%= excursion.description %>
+    </li>
+  <% end %>
+</ul>
