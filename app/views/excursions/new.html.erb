@@ -1,20 +1,5 @@
 <div class="container py-5">
   <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Create a new excursion</h3>
-        <%= simple_form_for @excursion do |f| %>
-          <ul>
-            <li> <%= f.text_field :name, placeholder: 'Guided City Tour with a local' %></li>
-            <li> <%= f.text_area :description, placeholder: 'Describe your excursion...' %></li>
-            <li> <%= f.text_field :country, placeholder: 'Excursion country' %></li>
-            <li> <%= f.text_field :location, placeholder: 'Excursion location' %></li>
-            <li> <%= f.number_field :price,in: 1.0..20.0, step: 0.5, placeholder: '0.00' %></li>
-            <li> <%= f.number_field :capacity,in: 1..100, placeholder: '1' %></li>
-            <li> <%= f.submit class: 'btn btn-flat' %>
-          </ul>
-        <% end %></li>
-      </div>
-    </div>
+    <%= render 'form' %>
   </div>
 </div>
