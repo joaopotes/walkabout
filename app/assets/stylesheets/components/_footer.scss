@@ -5,14 +5,14 @@
   justify-content: space-between;
   height: 64px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: $travelerbeige;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: $travelerbeige;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;

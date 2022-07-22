@@ -1,0 +1,40 @@
+.card-excursion {
+  overflow: hidden;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px $travelerblack;
+}
+
+.card-excursion > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-excursion h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-excursion p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-excursion .card-excursion-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-excursion-infos .card-excursion-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
