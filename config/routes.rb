@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:edit, :update, :destroy]
-  get '/myprofile', to: 'pages#profile'
+  get '/mybookings', to: 'pages#bookings_profile'
   get '/myexcursions', to: 'pages#excursions_profile'
 end
