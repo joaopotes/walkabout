@@ -1,30 +1,24 @@
-.container-fluid{
-  padding: 0px 160px
-}
-
 .navbar-title {
+  display: flex;
+  justify-content: center;
   h1 {
     color: $travelerblack;
   }
 }
 
 .navbar-lewagon {
-  justify-content: space-between;
   background: $travelerbeige;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  display: flex;
+  justify-content: right;
 }
 
 .navbar-logo {
-  background-color: $traveleryellow;
-  width: 55px;
-  height: 55px;
-  border-radius: 5px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
 }
 
 .navbar-lewagon .navbar-brand img {
