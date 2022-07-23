@@ -5,15 +5,15 @@
       <%= render 'shared/card_profile' %>
     </div>
     <div class="col-md-8">
-      <% @excursions.each do |excursion| %>
+      <% @bookings.each do |booking| %>
         <div class="card-excursion">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
           <div class="card-excursion-infos">
             <div>
-              <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
-              <p><%= excursion.description %></p>
+              <h2><%= link_to booking.excursion.name, excursion_path(booking.excursion) %></h2>
+              <p><%= booking.excursion.description %></p>
             </div>
-            <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
+            <h2 class="card-excursion-pricing">€<%= booking.excursion.price %></h2>
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-excursion-user avatar-bordered" />
           </div>
         </div>
