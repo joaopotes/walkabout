@@ -2,4 +2,5 @@
 <h5> Capacity : <%= @excursion.capacity %> | €<%= @excursion.price %> </h5>
 <p> <%= @excursion.description %> </p>
 <hr>
- <%= link_to "back", excursions_path%>
+<%= link_to "Book this excursion", new_excursion_booking_path(@excursion), class: "btn btn-cancel" %>
+<%= link_to "Back", excursions_path%>
