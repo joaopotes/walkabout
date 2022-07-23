@@ -1,5 +1,9 @@
 <h1> Excursion index </h1>
-
+<div class="container mb-3 ">
+<% if current_user.role == 'Host'%>
+  <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-primary" %>
+<% end %>
+</div>
 <div class="cards">
   <% @excursions.each do |excursion| %>
     <div class="card-excursion">
