@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
 before_action :set_booking, only: [:edit, :update, :destroy]
-before_action :set_excursion, only: :create
+before_action :set_excursion, only: [:new, :create]
+
   def new
     @booking = Booking.new
   end
@@ -11,7 +12,7 @@ before_action :set_excursion, only: :create
     @booking.excursion = @excursion
     @booking.user = current_user
     if @booking.save
-      redirect_to myprofile_path
+      redirect_to mybookings_path
     else
       render :new
     end
@@ -34,7 +35,7 @@ before_action :set_excursion, only: :create
   private
 
   def booking_params
-    params.require(:booking).permite(:start_time, :end_time)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking
