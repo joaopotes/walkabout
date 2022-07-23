@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 before_action :set_booking, only: [:edit, :update, :destroy]
-before action :set_excursion, only: :create
+before_action :set_excursion, only: :create
   def new
     @booking = Booking.new
   end
