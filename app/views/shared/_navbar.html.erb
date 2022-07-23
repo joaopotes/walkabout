@@ -15,10 +15,11 @@
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <% if current_user.role == "Host"%>
-                <%= link_to "Excursions", excursions_path, class: "dropdown-item" %>
+                <%= link_to "My excursions", myexcursions_path, class: "dropdown-item" %>
               <% else %>
                 <%= link_to "my bookings", mybookings_path, class: "dropdown-item" %>
               <% end %>
+              <% link_to "Excursions", excursions_path, class: "dropdown-item"  %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
         <% else %>
