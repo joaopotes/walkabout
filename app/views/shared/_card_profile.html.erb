@@ -1,19 +1,15 @@
 <div class="card-profile-user">
   <div class="user-profile">
     <div class="user-avatar">
-      PHOTO HERE
+      <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
     </div>
     <div>
-      <a href="#" class="user-avatar-update">Atualizar foto</a>
-    </div>
-
-    <div class="user-separation">
-      <div class="user-line"></div>
+      <a href="#" class="user-avatar-update">Update photo</a>
     </div>
 
     <div>
       <h3 class="user-about"></h3>
-      <p>display info here</p>
+      <%= current_user.first_name%> <%= current_user.last_name%>
     </div>
   </div>
 </div>

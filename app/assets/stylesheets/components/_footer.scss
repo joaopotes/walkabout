@@ -6,7 +6,11 @@
   height: 64px;
   padding: 0px 50px;
   color: $travelerbeige;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
