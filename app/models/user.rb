@@ -9,7 +9,7 @@ class User < ApplicationRecord
   # validates_associated :bookings       Jenna i dont know if this one is valid
   # validates_associated :excursions     Jenna i dont know if this one is valid
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 5..20 }
+  # validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { in: 5..20 }
   validates :first_name, :last_name, presence: true, length: { minimum: 3 }
 
   #  validates :role, presence: true, if: :role_guest_host?
