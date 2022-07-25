@@ -12,6 +12,6 @@ class Excursion < ApplicationRecord
   pg_search_scope :search,
     against: [ :name, :description, :country, :location, :price, :capacity ],
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end

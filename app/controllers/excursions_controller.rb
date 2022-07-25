@@ -1,7 +1,11 @@
 class ExcursionsController < ApplicationController
   before_action :set_excursion, only: %i[show edit update destroy]
   def index
-    @excursions = Excursion.search
+    if params [:query].present?
+      @excursions = Excursion.search(params[:query])
+    else
+      @excursions = Excursion.all
+    end
   end
 
   def show
