@@ -7,4 +7,11 @@ class Excursion < ApplicationRecord
   validates :country, :location, presence: true
   validates :price, numericality: { only_float: true }
   validates :capacity, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 500 }
+
+  include PgSearch::Model
+  pg_search_scope :search,
+    against: [ :name, :description, :country, :location, :price, :capacity ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

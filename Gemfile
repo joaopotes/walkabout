@@ -68,3 +68,6 @@ gem 'faker'
 
 # country select for excursions
 gem 'country_select'
+
+# PG Search
+gem 'pg_search', '~> 2.3.0'
