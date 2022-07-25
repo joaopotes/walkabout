@@ -32,6 +32,9 @@ gem 'autoprefixer-rails', '10.2.5'
 gem "font-awesome-sass", "~> 6.1.1"
 gem 'simple_form', github: 'heartcombo/simple_form'
 
+# PG Search
+gem 'pg_search', '~> 2.3.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
