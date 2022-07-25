@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col">
+      <%= form_tag excursions_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an Excursion" %>
+    </div>
+    <div class="col">
+      <%= submit_tag "Search", class: "btn btn-login", id:"button-addon2" %>
+      <% end %>
+    </div>
+  </div>
+</div>
