@@ -1,11 +1,17 @@
-<div class="container">
-  <h1>My Excursions</h1>
-  <%= link_to "Create a new excursion", new_excursion_path, class: "btn btn-cancel" %>
+<div class="container pt-2">
+  <div class="row d-flex flex-row-reverse">
+    <div class="col-9 align-self-end">
+      <% if current_user.role == 'Host'%>
+        <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-3">
       <%= render 'shared/card_profile' %>
     </div>
-    <div class="col-md-8">
+
+    <div class="cards col-9">
       <% @excursions.each do |excursion| %>
         <div class="card-excursion">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
