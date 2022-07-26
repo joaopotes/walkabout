@@ -71,3 +71,4 @@ gem 'faker'
 
 # country select for excursions
 gem 'country_select'
+
