@@ -1,35 +1,22 @@
 <div class= "container">
-  <h1> Excursions </h1>
-  <div class="container mb-3 ">
-    <% if current_user.role == 'Host'%>
-      <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-primary" %>
-    <% end %>
-
-    <!--Search-->
-    <%= form_tag excursions_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find an Excursion"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <!--End Search-->
-
-  <!--Map-->
-  <div class="pb-20">
-    <div style="width: 500px; height: 500px; "
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="row">
+    <div class="col">
+      <%= render 'form_search' %>
     </div>
   </div>
-  <!--End Map-->
-
 </div>
-  <div class="d-flex">
-    <div class="cards col-md-6">
+
+<div class="container pt-4">
+  <div class="row pt-2">
+    <div class="col">
+      <% if current_user.role == 'Host'%>
+        <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="cards col-6 pl-0">
       <% @excursions.each do |excursion| %>
         <div class="card-excursion">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
@@ -44,8 +31,17 @@
         </div>
       <% end %>
     </div>
-    <div class="map col-md-6">
-      <img src="https://www.seekpng.com/png/full/10-103122_world-map-designs-png-world-map-web-design.png" />
+
+    <div class="col-6 border border">
+      <div class="map">
+        <div class="pb-20">
+          <div style="width: 500px; height: 500px; "
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
