@@ -4,6 +4,8 @@
     <% if current_user.role == 'Host'%>
       <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-primary" %>
     <% end %>
+
+    <!--Search-->
     <%= form_tag excursions_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -13,6 +15,18 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
+  <!--End Search-->
+
+  <!--Map-->
+  <div class="pb-20">
+    <div style="width: 500px; height: 500px; "
+      data-controller="mapbox"
+      data-mapbox-markers-value="<%= @markers.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <!--End Map-->
+
 </div>
   <div class="d-flex">
     <div class="cards col-md-6">

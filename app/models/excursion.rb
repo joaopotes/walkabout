@@ -1,6 +1,8 @@
 class Excursion < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }
@@ -10,7 +12,7 @@ class Excursion < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search,
-    against: [ :name ],
+    against: [ :name, :address ],
     using: {
       tsearch: { prefix: true }
     }
