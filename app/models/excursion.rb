@@ -10,7 +10,7 @@ class Excursion < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search,
-    against: [ :name ],
+    against: [ :name, :description, :price ],
     using: {
       tsearch: { prefix: true }
     }
