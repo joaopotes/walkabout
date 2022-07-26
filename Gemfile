@@ -72,3 +72,4 @@ gem 'faker'
 # country select for excursions
 gem 'country_select'
 
+gem 'cloudinary', '~> 1.16.0'
