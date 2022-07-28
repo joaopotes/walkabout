@@ -1,6 +1,7 @@
 class Excursion < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
+  has_one_attached :photo
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { maximum: 1000, too_long: "%{count} characters is the maximum allowed" }

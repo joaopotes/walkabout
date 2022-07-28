@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :bookings
   has_many :excursions
+  has_one_attached :photo
   # validates_associated :bookings       Jenna i dont know if this one is valid
   # validates_associated :excursions     Jenna i dont know if this one is valid
 

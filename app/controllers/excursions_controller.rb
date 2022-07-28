@@ -42,7 +42,7 @@ class ExcursionsController < ApplicationController
   private
 
   def excursion_params
-    params.require(:excursion).permit(:image, :name, :description, :country, :location, :price, :capacity)
+    params.require(:excursion).permit(:image, :name, :description, :country, :location, :price, :capacity, :photo)
   end
 
   def set_excursion

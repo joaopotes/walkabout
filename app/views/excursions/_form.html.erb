@@ -26,6 +26,7 @@
           <%= f.label :capacity %>
           <%= f.number_field :capacity,in: 1..100, placeholder: '1' %>
         </div>
+          <%= f.input :photo, as: :file, required: :false %>
         <div class="mb-3">
           <%= f.submit class: 'btn btn-primary' %>
         </div>
