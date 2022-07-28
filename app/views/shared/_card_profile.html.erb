@@ -1,19 +1,17 @@
-<div class="card-profile-user">
-  <div class="user-profile">
-    <div class="user-avatar">
-      <% if current_user.photo.attached? %>
-        <%= cl_image_tag current_user.photo.key, height: 75, width: 75, radius: "max",  crop: :fill, fetch_format: :png %>
-      <% else %>
-        <%= image_tag("user_avatar.png", class: "avatar")  %>
-      <% end %>
-    </div>
-    <div>
-      <a href="#" class="user-avatar-update">Update photo</a>
-    </div>
 
-    <div>
-      <h3 class="user-about"></h3>
-      <%= current_user.first_name%> <%= current_user.last_name%>
-    </div>
+<div class="card card-profile-user">
+  <div class="avatar-large dropdown-toggle">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, height: 75, width: 75, radius: "max",  crop: :fill, fetch_format: :png %>
+    <% else %>
+      <%= image_tag("user_avatar.png", class: "avatar")  %>
+    <% end %>
+  </div>
+  <a href="#" class="user-avatar-update">Update photo</a>
+  <div class="card-body row justify-content-center">
+    <h4 class="card-title text-center"><%= current_user.first_name%> <%= current_user.last_name%></h4>
+    <h6 class="card-title text-center"><%= current_user.first_name%> <%= current_user.last_name%></h6>
+    <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Edit</a>
   </div>
 </div>
