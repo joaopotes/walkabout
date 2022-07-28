@@ -12,7 +12,13 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <div class="dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, height: 50, width: 50, radius: "max",  crop: :fill, fetch_format: :png %>
+              <% else %>
+                <%= image_tag("user_avatar.png", class: "avatar")  %>
+              <% end %>
+            </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Discover", excursions_path, class: "dropdown-item"  %>
               <% if current_user.role == "Host"%>

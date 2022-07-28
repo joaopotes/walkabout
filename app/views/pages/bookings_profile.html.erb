@@ -7,14 +7,24 @@
     <div class="col-md-8">
       <% @bookings.each do |booking| %>
         <div class="card-excursion">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <% if booking.excursion.photo.attached? %>
+                <%= cl_image_tag booking.excursion.photo.key, crop: :scale , q_auto: :good  %>
+              <% else %>
+                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+              <% end  %>
           <div class="card-excursion-infos">
             <div>
               <h2><%= link_to booking.excursion.name, excursion_path(booking.excursion) %></h2>
               <p><%= booking.excursion.description %></p>
             </div>
             <h2 class="card-excursion-pricing">€<%= booking.excursion.price %></h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-excursion-user avatar-bordered" />
+            <% if booking.excursion.user.photo.attached? %>
+                <div class="card-excursion-user avatar-bordered">
+                  <%= cl_image_tag booking.excursion.user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
+                </div>
+              <% else %>
+                <%= image_tag("user_avatar.png", class: "avatar")  %>
+              <% end %>
           </div>
         </div>
       <% end %>

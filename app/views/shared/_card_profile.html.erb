@@ -1,5 +1,12 @@
+
 <div class="card card-profile-user">
-  <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+  <div class="avatar-large dropdown-toggle">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, height: 75, width: 75, radius: "max",  crop: :fill, fetch_format: :png %>
+    <% else %>
+      <%= image_tag("user_avatar.png", class: "avatar")  %>
+    <% end %>
+  </div>
   <a href="#" class="user-avatar-update">Update photo</a>
   <div class="card-body row justify-content-center">
     <h4 class="card-title text-center"><%= current_user.first_name%> <%= current_user.last_name%></h4>
