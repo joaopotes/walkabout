@@ -1,46 +1,48 @@
-<div class= "container">
-  <div class="row">
-    <div class="col">
-      <%= render 'form_search' %>
-    </div>
-  </div>
-</div>
-
-<div class="container pt-4">
-  <div class="row pt-2">
-    <div class="col">
-      <% if current_user.role == 'Host'%>
-        <%= link_to "Add an Excursion", new_excursion_path, class: "btn btn-login" %>
-      <% end %>
+<div class="background-orange">
+  <div class= "container">
+    <div class="row">
+      <div class="col">
+        <%= render 'form_search' %>
+      </div>
     </div>
   </div>
 
+  <div class="container pt-4">
+    <div class="row pt-2">
+      <div class="col">
+        <% if current_user.role == 'Host'%>
+          <%= link_to "+Excursion", new_excursion_path, class: "btn btn-login" %>
+        <% end %>
+      </div>
+    </div>
+
   <div class="row">
-    <div class="cards col-6 pl-0">
-      <% @excursions.each do |excursion| %>
-        <div class="card-excursion">
-          <% if excursion.photo.attached? %>
-                <%= cl_image_tag excursion.photo.key, crop: :scale , q_auto: :good  %>
-              <% else %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-              <% end  %>
-          <div class="card-excursion-infos">
-            <div>
-              <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
-              <p><%= excursion.description %></p>
-            </div>
-            <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
-            <% if excursion.user.photo.attached? %>
+    <div class="container">
+      <div class="cards col-6 pl-0" style="padding-bottom: 3vh">
+        <% @excursions.each do |excursion| %>
+          <div class="card-excursion">
+            <% if excursion.photo.attached? %>
+              <%= cl_image_tag excursion.photo.key, crop: :scale , q_auto: :good  %>
+            <% else %>
+              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <% end  %>
+            <div class="card-excursion-infos">
+              <div>
+                <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
+                <p><%= excursion.description %></p>
+              </div>
+              <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
+              <% if excursion.user.photo.attached? %>
                 <div class="card-excursion-user avatar-bordered">
                   <%= cl_image_tag excursion.user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
                 </div>
               <% else %>
                 <%= image_tag("user_avatar.png", class: "avatar")  %>
               <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
     <div class="col-6">
     <div class="map">
@@ -50,8 +52,7 @@
           data-mapbox-markers-value="<%= @markers.to_json %>"
           data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-        <%# </div> %>
-    </div>
+      </div>
     </div>
   </div>
 </div>

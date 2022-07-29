@@ -1,33 +1,46 @@
-<div class="container">
-  <h1>My Bookings</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <%= render 'shared/card_profile' %>
+<div class="background-orange">
+  <div class="container pt-2">
+    <div class="row d-flex flex-row-reverse">
+      <div class="col-9 align-self-end">
+        <% if current_user.role == 'Host'%>
+          <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+        <% end %>
+        <%= link_to "Discover", excursions_path, class: "btn btn-discover2" %>
+      </div>
     </div>
-    <div class="col-md-8">
-      <% @bookings.each do |booking| %>
-        <div class="card-excursion">
-          <% if booking.excursion.photo.attached? %>
-                <%= cl_image_tag booking.excursion.photo.key, crop: :scale , q_auto: :good  %>
+
+    <div class="row">
+      <div class="col-3">
+        <%= render 'shared/card_profile' %>
+      </div>
+
+        <div class="cards col-9">
+          <% @bookings.each do |booking| %>
+            <div class="card-excursion">
+              <% if booking.excursion.photo.attached? %>
+                    <%= cl_image_tag booking.excursion.photo.key, crop: :scale , q_auto: :good  %>
               <% else %>
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-              <% end  %>
-          <div class="card-excursion-infos">
-            <div>
-              <h2><%= link_to booking.excursion.name, excursion_path(booking.excursion) %></h2>
-              <p><%= booking.excursion.description %></p>
-            </div>
-            <h2 class="card-excursion-pricing">€<%= booking.excursion.price %></h2>
-            <% if booking.excursion.user.photo.attached? %>
-                <div class="card-excursion-user avatar-bordered">
-                  <%= cl_image_tag booking.excursion.user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
-                </div>
-              <% else %>
-                <%= image_tag("user_avatar.png", class: "avatar")  %>
               <% end %>
-          </div>
+              <div class="card-excursion-infos">
+                <div>
+                  <h2><%= link_to booking.excursion.name, excursion_path(booking.excursion) %></h2>
+                  <p><%= booking.excursion.description %></p>
+                  <%# WE NEED TO DISPLAY START AND END TIME %>
+                </div>
+                <h2 class="card-excursion-pricing">€<%= booking.excursion.price %></h2>
+                <% if booking.excursion.user.photo.attached? %>
+                  <div class="card-excursion-user avatar-bordered">
+                    <%= cl_image_tag booking.excursion.user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
+                  </div>
+                <% else %>
+                  <%= image_tag("user_avatar.png", class: "avatar")  %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

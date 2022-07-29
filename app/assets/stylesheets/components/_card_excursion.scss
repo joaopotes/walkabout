@@ -1,7 +1,10 @@
 .card-excursion {
   overflow: hidden;
-  background: white;
+  background: $travelerbeige;
   border-radius: 8px;
+  background-color: $travelerbeige;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 8px;
 }
 
 .card-excursion > img {
@@ -22,6 +25,10 @@
   margin: 0;
 }
 
+.a:link {
+  text-decoration: none;
+  color: $travelerblack;
+}
 
 .card-excursion .card-excursion-infos {
   padding: 16px;

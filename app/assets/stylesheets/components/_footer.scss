@@ -1,8 +1,14 @@
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  }
+
 .background {
   background: $travelerblack;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  // position: fixed;
+  // bottom: 0;
 }
 .footer {
   display: flex;
