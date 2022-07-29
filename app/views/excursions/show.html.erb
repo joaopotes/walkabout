@@ -1,6 +1,15 @@
-<h1> <%= @excursion.name %> </h1>
-<h5> Capacity : <%= @excursion.capacity %> | €<%= @excursion.price %> </h5>
-<p> <%= @excursion.description %> </p>
-<hr>
-<%= link_to "Book this excursion", new_excursion_booking_path(@excursion), class: "btn btn-cancel" %>
-<%= link_to "Back", excursions_path%>
+<div>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-infos">
+      <h1> <%= @excursion.name %> </h1>
+      <h3> Capacity : <%= @excursion.capacity %> | €<%= @excursion.price %> </h3>
+      <p> <%= @excursion.description %> </p>
+    </div>
+    <hr>
+    <div>
+      <%= link_to "Book now", new_excursion_booking_path(@excursion), class: "btn btn-join" %>
+      <%= link_to "Back", excursions_path%>
+    </div>
+  </div>
+</div>

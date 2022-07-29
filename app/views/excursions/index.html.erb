@@ -1,47 +1,45 @@
-<div class= "container">
-  <div class="row">
-    <div class="col">
-      <%= render 'form_search' %>
-    </div>
-  </div>
-</div>
-
-<div class="container pt-4">
-  <div class="row pt-2">
-    <div class="col">
-      <% if current_user.role == 'Host'%>
-        <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
-      <% end %>
+<div class="background-orange">
+  <div class= "container">
+    <div class="row">
+      <div class="col">
+        <%= render 'form_search' %>
+      </div>
     </div>
   </div>
 
-  <div class="row">
-    <div class="cards col-6 pl-0">
-      <% @excursions.each do |excursion| %>
-        <div class="card-excursion">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="card-excursion-infos">
-            <div>
-              <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
-              <p><%= excursion.description %></p>
+  <div class="container pt-4">
+    <div class="row pt-2">
+      <div class="col">
+        <% if current_user.role == 'Host'%>
+          <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="cards col-6 pl-0" style="padding-bottom: 3vh">
+        <% @excursions.each do |excursion| %>
+          <div class="card-excursion">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <div class="card-excursion-infos">
+              <div>
+                <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
+                <p><%= excursion.description %></p>
+              </div>
+              <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-excursion-user avatar-bordered" />
             </div>
-            <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-excursion-user avatar-bordered" />
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-    <%# <div class="col-6 border border"> %>
-      <div class="map">
-        <%# <div class="pb-20"> %>
-          <div style="width: 500px; height: 500px; "
+      <div class="map col-6">
+          <div style="width: 620px; height: 625px; "
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @markers.to_json %>"
             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
-        <%# </div> %>
       </div>
-    <%# </div> %>
+    </div>
   </div>
 </div>
