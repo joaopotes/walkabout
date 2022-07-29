@@ -1,10 +1,17 @@
-<div class="container">
-  <h1>My Bookings</h1>
+<div class="container pt-2">
+  <div class="row d-flex flex-row-reverse">
+    <div class="col-9 align-self-end">
+      <% if current_user.role == 'Host'%>
+        <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+      <% end %>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-3">
       <%= render 'shared/card_profile' %>
     </div>
-    <div class="col-md-8">
+
+    <div class="cards col-9">
       <% @bookings.each do |booking| %>
         <div class="card-excursion">
           <% if booking.excursion.photo.attached? %>
@@ -16,6 +23,9 @@
             <div>
               <h2><%= link_to booking.excursion.name, excursion_path(booking.excursion) %></h2>
               <p><%= booking.excursion.description %></p>
+              <%# WE NEED TO DISPLAY START AND END TIME %>
+              <h2><%= booking.excursion.start_time %></h2>
+              <h2><%= booking.excursion.end_time %></h2>
             </div>
             <h2 class="card-excursion-pricing">€<%= booking.excursion.price %></h2>
             <% if booking.excursion.user.photo.attached? %>

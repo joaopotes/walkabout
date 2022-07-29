@@ -1,6 +1,6 @@
 .card-excursion {
   overflow: hidden;
-  background: white;
+  background: $travelerbeige;
   border-radius: 8px;
 }
 
@@ -22,6 +22,10 @@
   margin: 0;
 }
 
+.a:link {
+  text-decoration: none;
+  color: $travelerblack;
+}
 
 .card-excursion .card-excursion-infos {
   padding: 16px;

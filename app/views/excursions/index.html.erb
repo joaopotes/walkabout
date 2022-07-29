@@ -1,22 +1,23 @@
-<div class= "container">
-  <div class="row">
-    <div class="col">
-      <%= render 'form_search' %>
-    </div>
-  </div>
-</div>
-
-<div class="container pt-4">
-  <div class="row pt-2">
-    <div class="col">
-      <% if current_user.role == 'Host'%>
-        <%= link_to "Add an Excursion", new_excursion_path, class: "btn btn-login" %>
-      <% end %>
+<div class="background-orange">
+  <div class= "container">
+    <div class="row">
+      <div class="col">
+        <%= render 'form_search' %>
+      </div>
     </div>
   </div>
 
+  <div class="container pt-4">
+    <div class="row pt-2">
+      <div class="col">
+        <% if current_user.role == 'Host'%>
+          <%= link_to "Add Excursion", new_excursion_path, class: "btn btn-login" %>
+        <% end %>
+      </div>
+    </div>
+
   <div class="row">
-    <div class="cards col-6 pl-0">
+    <div class="cards col-6 pl-0" style="padding-bottom: 3vh>
       <% @excursions.each do |excursion| %>
         <div class="card-excursion">
           <% if excursion.photo.attached? %>
@@ -38,20 +39,16 @@
                 <%= image_tag("user_avatar.png", class: "avatar")  %>
               <% end %>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
 
-    <%# <div class="col-6 border border"> %>
-    <div class="map">
-        <%# <div class="pb-20"> %>
-        <div style="width: 500px; height: 500px; "
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-        <%# </div> %>
+      <div class="map col-6">
+          <div style="width: 620px; height: 625px; "
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+      </div>
     </div>
-    <%# </div> %>
   </div>
 </div>
