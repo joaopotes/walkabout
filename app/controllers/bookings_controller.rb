@@ -23,13 +23,13 @@ before_action :set_excursion, only: [:new, :create]
 
   def update
     @booking = Booking.update(booking_params)
-    redirect_to myprofile_path
+    redirect_to mybookings_path
   end
 
   def destroy
     #  @booking = Booking.find(params[:id])       Added in before_action
     @booking.destroy
-    redirect_to myprofile_path
+    redirect_to mybookings_path
   end
 
   private
