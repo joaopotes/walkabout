@@ -1,42 +1,47 @@
-<div class="container pt-2">
-  <div class="row d-flex flex-row-reverse">
-    <div class="col-9 align-self-end">
-      <% if current_user.role == 'Host'%>
-        <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-3">
-      <%= render 'shared/card_profile' %>
+<div class="background-orange">
+  <div class="container pt-2">
+    <div class="row d-flex flex-row-reverse">
+      <div class="col-9 align-self-end">
+        <% if current_user.role == 'Host'%>
+          <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+        <% end %>
+        <%= link_to "Discover", excursions_path, class: "btn btn-discover2" %>
+      </div>
     </div>
 
-    <div class="cards col-9">
-      <% @excursions.each do |excursion| %>
-        <div class="card-excursion">
-          <% if excursion.photo.attached? %>
+    <div class="row">
+      <div class="col-3">
+        <%= render 'shared/card_profile' %>
+      </div>
+
+        <div class="cards col-9">
+          <% @excursions.each do |excursion| %>
+            <div class="card-excursion">
+              <% if excursion.photo.attached? %>
                 <%= cl_image_tag excursion.photo.key, crop: :scale , q_auto: :good  %>
               <% else %>
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-              <% end  %>
-          <div class="card-excursion-infos">
-            <div>
-              <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
-              <p><%= excursion.description %></p>
-            </div>
-            <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
-            <% if current_user.photo.attached? %>
-                <div class="card-excursion-user avatar-bordered">
-                  <%= cl_image_tag current_user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
-                </div>
-              <% else %>
-                <%= image_tag("user_avatar.png", class: "avatar")  %>
               <% end %>
-            <%= link_to "Delete", excursion_path(excursion.id), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this excursion?" } %>
-            <%= link_to "Edit", edit_excursion_path(excursion.id), class: "btn btn-cancel" %>
-          </div>
+              <div class="card-excursion-infos">
+                <div>
+                  <h2><%= link_to excursion.name, excursion_path(excursion.id) %></h2>
+                  <p><%= excursion.description %></p>
+                </div>
+                <h2 class="card-excursion-pricing">€<%= excursion.price %></h2>
+                <% if current_user.photo.attached? %>
+                  <div class="card-excursion-user avatar-bordered">
+                    <%= cl_image_tag current_user.photo.key, height: 40, width: 40, radius: "max",  crop: :thumb, fetch_format: :png %>
+                  </div>
+                <% else %>
+                  <%= image_tag("user_avatar.png", class: "avatar")  %>
+                <% end %>
+              </div>
+              <%= link_to "Delete", excursion_path(excursion.id), method: :delete, class: "btn btn-cancel", data: { confirm: "Are you sure you want to delete this excursion?" } %>
+              <%= link_to "Edit", edit_excursion_path(excursion.id), class: "btn btn-cancel" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
