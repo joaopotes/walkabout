@@ -6,13 +6,13 @@
         <%= f.input :end_time %>
 
         <div class="mb-3">
-          <p> press button to register for <%= @excursion.name %> </p>
+          <p> Press button to register for <%= @excursion.name %> </p>
           <%= f.submit "register", class: 'btn btn-primary' %>
         </div>
         <% if current_user.id == @excursion.user_id %>
           <div class="mb-3">
             <%= f.label :confirmed %>
-            <%= f.checkbox :confirmed %>
+            <%= f.check_box :confirmed %>
           </div>
         <% end %>
         </div>

@@ -37,6 +37,22 @@
   font-weight: bold;
 }
 
+.btn-discover2 {
+  margin: 16px;
+  width: 16px;
+  font-size: 12px;
+  color: $travelerbeige;
+  background: $travelerblack;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-discover2:hover {
+  border: 1px solid $travelerblack;
+  color: $travelerbeige;
+  font-weight: bold;
+}
+
 .btn-signin {
   margin: 16px;
   width: 160px;

@@ -1,17 +1,17 @@
-<div class="card-product">
-  <div class="container">
-    <% if @excursion.photo.attached? %>
-                    <%= cl_image_tag @excursion.photo.key, height: 300, width: 400, crop: :scale  %>
-                  <% else %>
-                    <div class ="card-excursion">
-                      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"/>
-                    </div>
-                  <% end  %>
+<div class="card-product-user">
+  <% if @excursion.photo.attached? %>
+    <%= cl_image_tag @excursion.photo.key, height: 300, width: 400, crop: :scale  %>
+  <% else %>
+    <div class ="card-excursion">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg"/>
+    </div>
+  <% end  %>
+  <div class="card-product-infos">
     <h1> <%= @excursion.name %> </h1>
     <h3> Capacity : <%= @excursion.capacity %> | €<%= @excursion.price %> </h3>
     <p> <%= @excursion.description %> </p>
     <hr>
     <%= link_to "Book this excursion", new_excursion_booking_path(@excursion), class: "btn btn-primary" %>
     <%= link_to "Back", excursions_path, class: "btn btn-secondary"%>
-   </div>
+  </div>
 </div>

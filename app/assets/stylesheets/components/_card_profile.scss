@@ -1,8 +1,11 @@
-.card-profile{
-  padding: 8px 8px;
+.card-profile-user {
   margin: 0 auto;
-  border-radius: 5px;
-  border-style: solid;
-  border-color: $travelerblack;
-  border-width: 5px;
+  background-color: $travelerbeige;
+  padding: 8px 8px;
+  border-radius: 8px;
+}
+
+.card-profile-user .avatars {
+  margin: 0 auto;
+  justify-content: center;
 }
