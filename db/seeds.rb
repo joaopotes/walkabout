@@ -23,7 +23,7 @@ User.all.each do |host|
   Excursion.create(
     name: Faker::Hobby.activity, description: Faker::Lorem.sentence(word_count: 15),
     country: Faker::Address.country,
-    location: "#{Faker::Address.latitude},#{Faker::Address.longitude}",
+    address: Faker::Address.full_address,
     user_id: host.id, price: rand(10.99..99.99).round(2), capacity: rand(5..30)
   )
   puts "saving excursion #{Excursion.last.id}"

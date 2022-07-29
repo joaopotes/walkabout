@@ -1,3 +1,6 @@
+/*
+ *= require mapbox-gl
+ */
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -12,3 +15,6 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+//@import "mapbox-gl";
+//@import "mapbox-gl/dist/mapbox-gl";
+//@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
