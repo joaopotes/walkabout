@@ -54,7 +54,7 @@ locations = ["Kamari 847 00, Greece", "Parco Federico Fellini, 47921 Rimini RN, 
             "C. Agustín Montes Fuentes, 7, 29002 Málaga", "Fižela, 52100, Pula, Croatia"
             ]
 
-countries = ["greece", "Italy", "France", "Portugal", "Spain", ""]
+countries = ["greece", "Italy", "France", "Portugal", "Spain", "Croatia"]
 User.all.each do |host|
   excursion = Excursion.new(
     name: Faker::Hobby.activity, description: Faker::Lorem.sentence(word_count: 20),
@@ -62,7 +62,7 @@ User.all.each do |host|
     address: locations[int],
     user_id: host.id, price: rand(10.99..99.99).round(2), capacity: rand(5..30)
   )
-  file = URI.open(excursion_photos[num])
+  file = URI.open(excursion_photos[int])
   excursion.photo.attach(io: file, filename: "#{excursion.name}.jpg", content_type: 'image/png')
   puts "saving excursion"
   excursion.save!
