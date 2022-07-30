@@ -21,7 +21,7 @@
             </div>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Discover", excursions_path, class: "dropdown-item"  %>
-              <% if current_user.role == "Host"%>
+              <% if current_user.role == "host"%>
                 <%= link_to "My excursions", myexcursions_path, class: "dropdown-item" %>
               <% else %>
                 <%= link_to "My bookings", mybookings_path, class: "dropdown-item" %>
