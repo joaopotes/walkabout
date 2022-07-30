@@ -1,13 +1,16 @@
-<div class="banner">
-  <div class="container">
-    <div class="banner-container-phrases">
-      <h1 style="color:green;">Host your own tours</h1>
-      <h1 style="color:salmon;">Know the city from its locals</h1>
-      <h1 style="color:purple;">You're going places</h1>
+<div class="banner d-flex">
+  <div class="container m-auto">
+    <div class="cover d-flex align-items-center justify-content-center">
+      <div class="text-center text-white">
+        <div class="banner-container-phrases " style="height: 50px">
+          <h1 class="typed-js" data-controller="typed-js"></h1>
+        </div>
+
+        <div>
+          <h1>with <strong>WALKBOUT</strong></h1>
+        </div>
+      </div>
     </div>
-
-    <h1>with <strong>WALKBOUT</strong></h1>
-
     <div class="banner-container-buttons">
       <div class="discover-button">
         <%= link_to "Discover", excursions_path, class: "btn btn-discover" %>

@@ -1,17 +1,9 @@
 <div class="background-orange">
-  <div class= "container">
-    <div class="row">
-      <div class="col">
-        <%= render 'form_search' %>
-      </div>
-    </div>
-  </div>
-
-  <div class="container pt-4">
+  <div style="justify-content:space-evenly;">
     <div class="row pt-2">
       <div class="col">
         <% if current_user.role == 'Host'%>
-          <%= link_to "+Excursion", new_excursion_path, class: "btn btn-login" %>
+          <%= link_to "Add an Excursion", new_excursion_path, class: "btn btn-login" %>
         <% end %>
       </div>
     </div>
@@ -46,6 +38,9 @@
       </div>
 
       <div class="col-6">
+<<<<<<< HEAD
+        <%= render 'map' %>
+=======
         <div class="map">
           <div style="width: 636px; height: 650px; border-radius: 8px;"
             data-controller="mapbox"
@@ -53,6 +48,7 @@
             data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
+>>>>>>> 8b3348b30005bae90007cb274612d88741b3bafe
       </div>
     </div>
   </div>
