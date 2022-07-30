@@ -7,7 +7,9 @@
         <% end %>
       </div>
     </div>
+  </div>
 
+<<<<<<< HEAD
     <div class= "container">
       <div class="row">
         <div class="col">
@@ -21,6 +23,11 @@
     <div class="row">
       <div class="container">
         <div class="cards col-6 pl-0" style="padding-bottom: 3vh">
+=======
+  <div class="container">
+    <div class="row">
+      <div class="cards col-6 pl-0" style="padding-bottom: 3vh">
+>>>>>>> 8b3348b30005bae90007cb274612d88741b3bafe
         <% @excursions.each do |excursion| %>
           <div class="card-excursion">
             <% if excursion.photo.attached? %>
@@ -47,7 +54,18 @@
       </div>
 
       <div class="col-6">
+<<<<<<< HEAD
         <%= render 'map' %>
+=======
+        <div class="map">
+          <%# <div class="pb-20"> %>
+          <div style="width: 636px; height: 650px; "
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+        </div>
+>>>>>>> 8b3348b30005bae90007cb274612d88741b3bafe
       </div>
     </div>
   </div>
