@@ -1,14 +1,14 @@
 <div class="background-orange">
   <div class="container">
-    <%= render 'form_search' %>
 
-    <div style="justify-content:space-evenly;">
-      <div class="row pt-2">
-        <div class="col">
-          <% if current_user.role == 'Host'%>
-            <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
-          <% end %>
+    <div class="row pt-2">
+      <div class="col">
+        <div>
+          <%= render 'form_search' %>
         </div>
+        <% if current_user.role == 'Host'%>
+          <%= link_to "+ Excursion", new_excursion_path, class: "btn btn-login" %>
+        <% end %>
       </div>
     </div>
   </div>
