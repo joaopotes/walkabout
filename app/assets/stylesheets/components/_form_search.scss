@@ -1,3 +1,14 @@
-.form-control{
+.btn-search {
+  color: $travelerbeige;
+  border: 1px solid $travelerblack;
+  background-color: $travelerblack;
+  padding: 8px 24px;
+  margin-right: 8px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease;
+}
 
+.btn-search:hover {
+  color: black;
+  border: 2px solid $travelerblack;
 }
