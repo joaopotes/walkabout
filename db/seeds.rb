@@ -1,6 +1,5 @@
 require 'faker'
 # make hosts x 5
-excursion_samples = ["Food tour with a local chef", "Architecture and History tour around old town", "sunset sail with wine",]
 
 puts "creating users- hosts ..."
 5.times do
