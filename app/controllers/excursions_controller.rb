@@ -4,6 +4,14 @@ class ExcursionsController < ApplicationController
   def index
     if params[:query].present?
       @excursions = Excursion.search(params[:query])
+      @markers = @excursions.geocoded.map do |excursion|
+        {
+          lat: excursion.latitude,
+          lng: excursion.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { excursion: excursion }),
+          image_url: helpers.asset_url("green_marker3.png")
+        }
+      end
     else
       @excursions = Excursion.all
       @markers = @excursions.geocoded.map do |excursion|
