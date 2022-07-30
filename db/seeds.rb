@@ -1,11 +1,12 @@
 require 'faker'
 # make hosts x 5
+excursion_samples = ["Food tour with a local chef", "Architecture and History tour around old town", "sunset sail with wine",]
+
 puts "creating users- hosts ..."
 5.times do
   user = User.new(
     first_name: Faker::Name.first_name, last_name: Faker::Name.last_name,
-    username: Faker::Games::SuperSmashBros.fighter, email: Faker::Internet.email,
-    password: 'dejavu845'
+    email: Faker::Internet.email, password: 'dejavu845'
   )
   user.role = 'host'
 

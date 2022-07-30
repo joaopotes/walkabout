@@ -7,12 +7,11 @@
         <%= image_tag("user_avatar.png", class: "avatar")  %>
       <% end %>
     </div>
-    <a href="#" class="user-avatar-update">Update photo</a>
   </div>
 
   <div class="card-body row justify-content-center">
     <h4 class="card-title text-center"><%= current_user.first_name%> <%= current_user.last_name%></h4>
     <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Edit</a>
+    <%= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>
   </div>
 </div>
