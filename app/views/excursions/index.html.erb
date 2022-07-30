@@ -17,8 +17,8 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="container">
+  <div class="container">
+    <div class="row">
       <div class="cards col-6 pl-0" style="padding-bottom: 3vh">
         <% @excursions.each do |excursion| %>
           <div class="card-excursion">
@@ -45,13 +45,14 @@
         <% end %>
       </div>
 
-    <div class="col-6">
-    <div class="map">
-        <%# <div class="pb-20"> %>
-        <div style="width: 500px; height: 500px; "
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="col-6">
+        <div class="map">
+          <%# <div class="pb-20"> %>
+          <div style="width: 636px; height: 650px; "
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
     </div>
